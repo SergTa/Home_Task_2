@@ -10,7 +10,7 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
 
 
-@st.cache_resource 
+@st.cache_resource() 
 def load_model():
     return Xception(weights='imagenet')
 
