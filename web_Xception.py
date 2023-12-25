@@ -2,12 +2,12 @@ import io
 import streamlit as st
 from PIL import Image
 import numpy as np
-import tensorflow as tf
+import tensorflow 
 
-from tf.keras.applications import Xception
+from tensorflow.keras.applications import Xception
 
-from tf.keras.preprocessing import image
-from tf.keras.applications.efficientnet import preprocess_input, decode_predictions
+from tensorflow.keras.preprocessing import image
+from tefsorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
 
 
 @st.cache_resource() 
