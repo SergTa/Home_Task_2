@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 import keras
 
-from tensorflow.python.keras.applications import Xception
+from tensorflow.keras.applications import Xception
 
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
