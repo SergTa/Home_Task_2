@@ -2,21 +2,21 @@ import io
 import streamlit as st
 from PIL import Image
 import numpy as np
-#import keras
+import tensorflow as tf
 
-from tensorflow.keras.applications import EfficientNetB0 #Xception
+from tf.keras.applications import Xception
 
-from tensorflow.keras.preprocessing import image
-from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
+from tf.keras.preprocessing import image
+from tf.keras.applications.efficientnet import preprocess_input, decode_predictions
 
 
 @st.cache_resource() 
 def load_model():
-    return EfficientNetB0 (weights='imagenet') #Xception
+    return Xception (weights='imagenet') #Xception
 
 #Функция предварительной обработки изображения
 def preprocess_image(img):
-    img = img.resize((244, 244))
+    img = img.resize((299, 299))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
