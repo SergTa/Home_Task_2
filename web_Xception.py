@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 #import keras
 
-from tensorflow.keras.applications import Xception
+from tensorflow.keras.applications import EfficientNetB0 #Xception
 
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.efficientnet import preprocess_input, decode_predictions
@@ -12,11 +12,11 @@ from tensorflow.keras.applications.efficientnet import preprocess_input, decode_
 
 @st.cache_resource() 
 def load_model():
-    return Xception(weights='imagenet')
+    return EfficientNetB0 (weights='imagenet') #Xception
 
 #Функция предварительной обработки изображения
 def preprocess_image(img):
-    img = img.resize((299, 299))
+    img = img.resize((244, 244))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
